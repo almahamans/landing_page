@@ -54,13 +54,12 @@
   sectionid4.classList.add("active")}
   );
 //highlight a section when scrolling by user
-/** resource for this solution https://stackoverflow.com/questions/67588861/adding-class-to-a-section-when-i-scroll-to-it */
-window.onscroll = function() {
-let allSections = document.querySelectorAll('section')
-  allSections.forEach(section => {
-  
-      if(section.getBoundingClientRect().top >= -400 && section.getBoundingClientRect().top <= 150)
-          section.classList.add("active");
-      else
-          section.classList.remove("active");  
-  })}
+window.addEventListener('scroll', scroll => {
+  let sections = document.querySelectorAll('section')
+    sections.forEach(section => {
+    if(section.getBoundingClientRect().top >= -500 && section.getBoundingClientRect().top <= 200)
+      section.classList.add("active");
+    else
+       section.classList.remove("active");  
+    }
+    )})
